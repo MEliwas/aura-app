@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   Upload,
@@ -203,10 +201,20 @@ function Landing({ onFile, dragActive, setDragActive }) {
           ref={inputRef}
           type="file"
           accept="image/*"
-          className="hidden"
           onChange={(e) => {
             const f = e.target.files?.[0];
             if (f) onFile(f);
+          }}
+          style={{
+            position: "absolute",
+            width: 1,
+            height: 1,
+            padding: 0,
+            margin: -1,
+            overflow: "hidden",
+            clip: "rect(0,0,0,0)",
+            whiteSpace: "nowrap",
+            border: 0,
           }}
         />
         <p className="mt-4 text-xs text-white/30">
@@ -528,10 +536,16 @@ export default function AuraScanner() {
         }
 
         .title-gradient {
-          background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, rgba(255,255,255,0.55) 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
+          color: #ffffff;
+        }
+        @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+          .title-gradient {
+            background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, rgba(255,255,255,0.55) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+          }
         }
 
         .upload-btn {
@@ -601,10 +615,16 @@ export default function AuraScanner() {
           background: rgba(124,92,255,0.35);
         }
         .score-number {
-          background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.5) 100%);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
+          color: #ffffff;
+        }
+        @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+          .score-number {
+            background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.5) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+          }
         }
 
         @keyframes auraFadeUp {
