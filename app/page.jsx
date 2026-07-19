@@ -537,15 +537,7 @@ export default function AuraScanner() {
 
         .title-gradient {
           color: #ffffff;
-        }
-        @supports ((background-clip: text) or (-webkit-background-clip: text)) {
-          .title-gradient {
-            background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, rgba(255,255,255,0.55) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-          }
+          text-shadow: 0 0 40px rgba(124,92,255,0.35);
         }
 
         .upload-btn {
@@ -616,15 +608,7 @@ export default function AuraScanner() {
         }
         .score-number {
           color: #ffffff;
-        }
-        @supports ((background-clip: text) or (-webkit-background-clip: text)) {
-          .score-number {
-            background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.5) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-          }
+          text-shadow: 0 0 30px rgba(124,92,255,0.4);
         }
 
         @keyframes auraFadeUp {
